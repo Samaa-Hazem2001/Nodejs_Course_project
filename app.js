@@ -83,7 +83,8 @@ server.listen(8000, '127.0.0.1',() => {
     console.log(`listening on port number  8000`);
 })
 
-let myEmitter = new events.EventEmitter()
+// let myEmitter = new events.EventEmitter()
+let myEmitter = new user()
 
 //NOTE: you have to setup the event listner before emit any event t-m.s-
 myEmitter.on('userCreate',(id,name)=>{
@@ -94,7 +95,7 @@ myEmitter.on('userCreate',(id,name)=>{
 //NOTE: you can make multiple listner , then all those listners will excuted one after the other
 myEmitter.on('userCreate',()=>{
     //console.log('User added to database');
-    console.log('User ${name} with ${id} added to database');
+    console.log(`User ${name} with ${id} added to database`);
 })
 
 //it is a custom emitted event -m.s
