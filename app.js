@@ -136,11 +136,22 @@ server.listen(8000, '127.0.0.1',() => {
 
 // sol_3: NOTE:
 // "backpressure" when the reading and writing speeds are not equal
-server.on('request', (req, res) => {
-    let rs = fs.createReadStream('./Files/large-file.txt');
-    rs.pipe(res); 
-    //NOTE: we can not use "pipe" by something else than the readable stream , as this:
-    //redableSource.pipe(writableDest)
-    //writableDest can be .... 
-})
+// server.on('request', (req, res) => {
+//     let rs = fs.createReadStream('./Files/large-file.txt');
+//     rs.pipe(res); 
+//     //NOTE: we can not use "pipe" by something else than the readable stream , as this:
+//     //redableSource.pipe(writableDest)
+//     //writableDest can be .... 
+// })
+
+//NOTE: to install "Express" -last version- : write in the terminal "npm install express"
+
+//NOTE: install development dependencies: to inform that this dependency in development dependencies
+// we have to write "--save-dev" after the intallation command
+
+//NOTE: nodemon usage is ..
+
+//NOTE: to install package globally: "npm install -g" +package name+ (if it is dev dependency) "--save-dev"
+
+//NOTE: to use "nodemon" : write in the terminal : nodemon +file_name.js 
 
