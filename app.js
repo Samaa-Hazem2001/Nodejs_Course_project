@@ -155,3 +155,48 @@ server.listen(8000, '127.0.0.1',() => {
 
 //NOTE: to use "nodemon" : write in the terminal : nodemon +file_name.js 
 
+// console.log('program started')
+
+// //NOTE:this is stored in 1st phase in event loop
+// setTimeout(() =>{
+//     console.log('timer callback excuted')
+// }, 0) // 0? then why it is not excuted before "console.log('program complete')"
+
+// //NOTE:this is stored in 2nd phase in event loop
+// fs.readFile('./Files/input.txt', () => {
+//     console.log('file read complete')
+// })
+
+
+// //NOTE:this is stored in 3rd phase in event loop
+// setImmediate(()=> {
+//     console.log('setImmediate callback excuted')   
+// })
+
+// console.log('program complete')
+
+//**********************************
+console.log('program started')
+
+fs.readFile('./Files/input.txt', () => {
+    console.log('file read complete')
+
+    setTimeout(() =>{
+        console.log('timer callback excuted')
+    }, 0) 
+
+    setImmediate(()=> {
+        console.log('setImmediate callback excuted')   
+    })
+
+    //NOTE: this callback will be exctuted before setTimeout's and setImmediate's callback functions
+    //the explanation in this video: 
+    // https://www.youtube.com/watch?v=5F4iO-W0ZbY&list=PL1BztTYDF-QPdTvgsjf8HOwO4ZVl_LhxS&index=28&pp=iAQB
+
+    process.nextTick(() => {
+        console.log('process.nextTick callback executed')
+    })
+})
+
+console.log('program complete')
+
