@@ -1,0 +1,19 @@
+{
+  "name": "node-js-basic",
+  "version": "1.0.0",
+  "description": "basics of nodejs",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Samaa-Hazem2001/Nodejs_Course_project.git"
+  },
+  "author": "Samaa Hazem",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Samaa-Hazem2001/Nodejs_Course_project/issues"
+  },
+  "homepage": "https://github.com/Samaa-Hazem2001/Nodejs_Course_project#readme"
+}
